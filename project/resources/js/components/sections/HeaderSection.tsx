@@ -4,7 +4,7 @@ export default function HeaderSection() {
             <div className="max-w-4xl mx-auto px-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-4 tracking-tight text-gray-900 dark:text-white">
                     HealthchatAI
-                    <span className="block mt-2 text-teal-600 dark:text-teal-400 font-medium">
+                    <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 font-medium">
                         Medical Assistant
                     </span>
                 </h1>
@@ -13,7 +13,7 @@ export default function HeaderSection() {
                     Evidence-based health information at your fingertips
                 </p>
                 
-                <div className="w-16 h-1 bg-teal-500 mx-auto mb-8"></div>
+                <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
                 
                 <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-10">
                     Ask questions about symptoms, conditions, medications, and preventive care.
@@ -21,7 +21,7 @@ export default function HeaderSection() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button className="px-6 py-3 bg-teal-600 text-white rounded-md font-medium hover:bg-teal-700 transition-colors shadow-sm">
+                    <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md font-medium hover:from-blue-600 hover:to-purple-700 transition-colors shadow-sm">
                         Start Consultation
                     </button>
                     <button className="px-6 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-md font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">

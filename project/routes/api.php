@@ -2,27 +2,14 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\ChatSessionController;
 
-// DeepAI API endpoint
-Route::post('/chat', function (Request $request) {
-    $validatedData = $request->validate([
-        'prompt' => 'required|string|max:2000',
-    ]);
+// Chat session routes
+Route::get('/chat-sessions', [ChatSessionController::class, 'index']);
+Route::post('/chat-sessions', [ChatSessionController::class, 'store']);
+Route::delete('/chat-sessions/{id}', [ChatSessionController::class, 'destroy']);
 
-    try {
-        $response = Http::withHeaders([
-            'api-key' => env('DEEPAI_API_KEY'),
-            'Content-Type' => 'application/json',
-        ])->post('https://api.deepai.org/api/text-generator', [
-            'text' => $validatedData['prompt']
-        ]);
-
-        return $response->json();
-    } catch (\Exception $e) {
-        return response()->json([
-            'error' => 'Failed to get response from AI',
-            'message' => $e->getMessage()
-        ], 500);
-    }
-})->middleware('auth');
+// Test route to verify API is accessible
+Route::get('/test', function() {
+    return response()->json(['message' => 'API is working']);
+});
